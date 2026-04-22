@@ -43,10 +43,13 @@ const settingsBtn = document.getElementById("settings-btn");
 const difficultySelect = document.getElementById("difficulty");
 
 
+
 function addWordToDOM() {
     randomWord = Math.floor(Math.random() * words.length);
     word.innerHTML = words[randomWord];
 }
+
+addWordToDOM()
 
 function updateScore () {
     score++
@@ -60,3 +63,18 @@ text.addEventListener("input", function (e){
         text.value = "";
     }
 });
+
+function updateTime(){
+    console.log(time --)
+    if(time === 0) {
+        clearInterval(timer)
+        gameOver();
+    }
+}
+const timer = setInterval(updateTime, 1000);
+
+function endGame(){
+    endgameE1.style.display = "flex";
+}
+
+
