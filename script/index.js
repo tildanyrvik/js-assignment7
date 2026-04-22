@@ -43,7 +43,7 @@ const settingsBtn = document.getElementById("settings-btn");
 const difficultySelect = document.getElementById("difficulty");
 
 
-function addWordToDOM(word) {
+function addWordToDOM() {
     randomWord = Math.floor(Math.random() * words.length);
     word.innerHTML = words[randomWord];
 }
@@ -51,3 +51,12 @@ function addWordToDOM(word) {
 function updateScore () {
     score++
 }
+
+text.addEventListener("input", function (e){
+    if (text.value === word.innerHTML) {
+        updateScore();
+        addWordToDOM();
+        time += 5;
+        text.value = "";
+    }
+});
