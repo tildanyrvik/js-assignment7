@@ -68,13 +68,13 @@ function updateTime(){
     console.log(time --)
     if(time === 0) {
         clearInterval(timer)
-        gameOver();
+        endGame();
     }
 }
 const timer = setInterval(updateTime, 1000);
 
 function endGame(){
-    endgameE1.style.display = "flex";
+    endgameEl.style.display = "flex";
 }
 
 
